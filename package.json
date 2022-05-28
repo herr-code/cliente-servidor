@@ -1,0 +1,16 @@
+{
+  "name": "api-prisma-db",
+  "version": "1.0.0",
+  "description": "Proyecto 3 Semana 5 Mission Backend JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "prismadb",
+    "postgresql"
+  ],
+  "author": "herr-code",
+  "license": "ISC"
+}
