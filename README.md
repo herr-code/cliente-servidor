@@ -90,11 +90,20 @@ Para consultar más información sobre Prisma (migraciones, schemas, etc.) [aqu�
 
 Para verificar los endpoints se hace uso de [Postman](https://www.postman.com/ "Postman Oficial"). He aquí algunos ejemplos:
 
-- Endpoint 1 Obtener todos los explorers:
+- Endpoint: Obtener todos los explorers:
   - Request => localhost:3000/explorers
 
-- Endpoint 2 Obtener explorer mediante id:
+![Animation1](https://user-images.githubusercontent.com/61515833/171520930-9b2318e6-0ea9-4e65-a88c-68e6a3f52457.gif)
+
+- Endpoint: Obtener explorer mediante id:
   - Request => localhost:3000/explorers/:id
+
+![Animation2](https://user-images.githubusercontent.com/61515833/171521392-ab5c9664-9ed0-4719-b506-0242a6ba5b77.gif)
+
+- Endpoint: Eliminar la mission con id 4
+  - Request => localhost:3000/missions/4
+
+![Animation3](https://user-images.githubusercontent.com/61515833/171522229-c140b459-4525-4cb6-8134-03935a235c23.gif)
 
 ## :open_file_folder: Estructura de carpetas
 
