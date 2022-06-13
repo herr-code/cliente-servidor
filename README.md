@@ -1,36 +1,15 @@
-# ⚡ API + Prismaddb + Postgresql ⚡
-(Ejercicio 3) Semana 5: LaunchX | Mission Backend JS
+# ⚡ Cliente - Servidor (Backend) ⚡
+(Ejercicio 4) Semana 5: LaunchX | Mission Backend JS
 
-Creación de endpoints (API) para consultar una BD de `Postgresql` usando `prismadb`.
+Esta es una práctica fullstack ya que tenemos un backend (este proyecto) y un [cliente](https://github.com/herr-code/client-launchx).
+El backend es una API (realizada [aquí](https://github.com/herr-code/api-prisma-db)) la cúal será consumida por un cliente (frontend), que no es más que una aplicación hecha en [Vue 3](https://vuejs.org/).
+
+## :exclamation: Consideraciones
+
+Comunicar aplicaciones de diferentes dominios generan un problema de [CORS]()
 
 ## :pushpin: Requerimientos:
 
-Explorers: 
-
-1. Habilitar un endpoint para consultar todos los explorers con todos sus campos.
-2. Habilitar un endpoint para consultar un explorer mediante un `id`.
-3. Habilitar un endpoint para crear un nuevo explorer.
-4. Habilitar un endpoint para actualizar la `mission` de un explorer.
-5. Habilitar un endpoint para eliminar un explorer.
-
-Missions: 
-
-1. Habilitar un endpoint para consultar todas las missionss con todos sus campos.
-2. Habilitar un endpoint para consultar una mission mediante un `id`.
-3. Habilitar un endpoint para crear una nueva mission.
-4. Habilitar un endpoint para actualizar el `missionComander` de una mission.
-5. Habilitar un endpoint para eliminar una mission.
-
-## :chart: Desarrollo
-
-1. Dado los requerimientos se deben tener en cuenta como serán los endpoints y requests de la API:
-
-| Endpoint | Request | Response |
-|---|---|---|
-| `localhost:3000/explorers` | `localhost:3000/explorers` | Devuelve la lista completa de explorers |
-| `localhost:3000/explorers/:id` | `localhost:3000/explorers/2` | Explorer con `id` 2 |
-| `localhost:3000/missions` | `localhost:3000/missions` | Devuelve la lista completa de missions|
-| `localhost:3000/missions/:id` | `localhost:3000/missions:1` | Mission con `id` 1 |
 
 2. Dependencias y tecnologías.
 
@@ -88,22 +67,6 @@ Para consultar más información sobre Prisma (migraciones, schemas, etc.) [aqu�
 
 ## :shipit: Resultados
 
-Para verificar los endpoints se hace uso de [Postman](https://www.postman.com/ "Postman Oficial"). He aquí algunos ejemplos:
-
-- Endpoint: Obtener todos los explorers:
-  - Request => localhost:3000/explorers
-
-![Animation1](https://user-images.githubusercontent.com/61515833/171520930-9b2318e6-0ea9-4e65-a88c-68e6a3f52457.gif)
-
-- Endpoint: Obtener explorer mediante id:
-  - Request => localhost:3000/explorers/:id
-
-![Animation2](https://user-images.githubusercontent.com/61515833/171521392-ab5c9664-9ed0-4719-b506-0242a6ba5b77.gif)
-
-- Endpoint: Eliminar la mission con id 4
-  - Request => localhost:3000/missions/4
-
-![Animation3](https://user-images.githubusercontent.com/61515833/171522229-c140b459-4525-4cb6-8134-03935a235c23.gif)
 
 ## :open_file_folder: Estructura de carpetas
 
