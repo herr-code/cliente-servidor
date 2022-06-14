@@ -12,6 +12,23 @@ Comunicar aplicaciones de diferentes dominios generan un problema de [CORS](http
 
 Para solucionar esto tenemos que hacer uso del paquete [CORS](https://www.npmjs.com/package/cors) para Node JS.
 
+Instalamos la dependencia necesaria: `cors`:
+
+```
+npm install cors --save
+```
+
+Ahora escribimos el código necesario en `lib/server.js` para permitir el acceso:
+
+```js
+const cors = require("cors");
+
+const corsOptions = {
+    origin: "http://localhost:8081"
+};
+
+app.use(cors(corsOptions));
+```
 ## :pushpin: Requerimientos:
 
 
@@ -22,25 +39,6 @@ Para solucionar esto tenemos que hacer uso del paquete [CORS](https://www.npmjs.
 :mag_right: Dependencias:
 
 - [CORS](https://www.npmjs.com/package/cors "Cors NPM") ^4.18.1 Proporciona un middleware Connect / Express que se puede usar para habilitar CORS con varias opciones.
-
-3. Crear un proyecto de JS dentro de la carpeta `visual-thinking-api` con las opciones por defecto:
-
-```
-npm init --yes
-```
-
-4. Inicializar un repositorio dentro de la carpeta `api-prisma-db`:
-
-```
-git init
-```
-5. Instalar las dependencias necesarias: `Express JS`, `Eslinter`, `Prisma`:
-
-```
-npm install express --save
-npm install eslint --save-dev
-npm install prisma --save-dev
-```
 
 6. El siguiente grafico representa la estructura de la solucíón:
 
@@ -59,7 +57,6 @@ graph TD;
 ```env
 DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
 ```
-Para consultar más información sobre Prisma (migraciones, schemas, etc.) [aquí](https://www.prisma.io/docs/getting-started "Prisma Oficial").
 
 ## :shipit: Resultados
 
