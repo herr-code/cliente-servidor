@@ -6,7 +6,11 @@ El backend es una API (realizada [aquí](https://github.com/herr-code/api-prisma
 
 ## :exclamation: Consideraciones
 
-Comunicar aplicaciones de diferentes dominios generan un problema de [CORS]()
+Comunicar aplicaciones de diferentes dominios generan un problema de [CORS](https://developer.mozilla.org/es/docs/Web/HTTP/CORS). Básicamente es un mecanismo que implementan los navegadores para permitir acceder a recursos de un servidor en un origen distinto (dominio) al que pertenece.
+
+![diagrama](https://user-images.githubusercontent.com/61515833/173467635-a494a4ca-f051-4cbd-9425-073bf704cb25.png)
+
+Para solucionar esto tenemos que hacer uso del paquete [CORS](https://www.npmjs.com/package/cors) para Node JS.
 
 ## :pushpin: Requerimientos:
 
@@ -15,17 +19,9 @@ Comunicar aplicaciones de diferentes dominios generan un problema de [CORS]()
 
 :tanabata_tree: Tecnologías usadas:
 
-- [Node JS](https://nodejs.org/es/ "Node Oficial") v13.14.0 (Entorno de ejecución para JavaScript construido con V8, motor de JavaScript de Chrome).
-- [NPM](https://www.npmjs.com/ "NPM Oficial") v6.14.4 (Gestor de dependencias para Node JS)
-- [Git](https://git-scm.com/ "Git Oficial") v2.31.1 (Sistema de control de versiones)
-- [PostgreSQL](https://www.postgresql.org/ "PostgreSQL Oficial") v14 (Sistema de base de datos relacional de objetos de código abierto)
-- [Postman](https://www.postman.com/ "Postman Oficial") (Aplicación que dispone de herramientas nativas que nos permite realizar peticiones de una manera simple para testear APIs de tipo REST propias o de terceros)
-
 :mag_right: Dependencias:
 
-- [Express JS](http://expressjs.com/ "Express Oficial") ^4.18.1 (Web framework de Node JS para infraestructura de aplicaciones web y simplificar la creación de APIS).
-- [Eslint](https://eslint.org/ "Eslint Oficial") ^8.15.0 (Linter que examina código Javascript de acuerdo a ciertas normas y criterios (personalizables por el programador) para que el código Javascript siga unos estándares y estilos de calidad).
-- [Prisma](https://jestjs.io/es-ES/](https://www.prisma.io/ "Prisma Oficial") ^3.14.0 ([ORM](https://codigofacilito.com/articulos/orm-explicacion "Qué es un ORM") de próxima generación de código abierto).
+- [CORS](https://www.npmjs.com/package/cors "Cors NPM") ^4.18.1 Proporciona un middleware Connect / Express que se puede usar para habilitar CORS con varias opciones.
 
 3. Crear un proyecto de JS dentro de la carpeta `visual-thinking-api` con las opciones por defecto:
 
