@@ -1,73 +1,63 @@
-# ⚡ API + Prismaddb + Postgresql ⚡
-(Ejercicio 3) Semana 5: LaunchX | Mission Backend JS
+# ⚡ Cliente - Servidor (Backend) ⚡
+(Ejercicio 4) Semana 5: LaunchX | Mission Backend JS
 
-Creación de endpoints (API) para consultar una BD de `Postgresql` usando `prismadb`.
+Esta es una práctica fullstack ya que tenemos un backend (este proyecto) y un [cliente](https://github.com/herr-code/client-launchx).
+El backend es una API (realizada [aquí](https://github.com/herr-code/api-prisma-db)) la cúal será consumida por un cliente (frontend), que no es más que una aplicación hecha en [Vue 3](https://vuejs.org/).
 
+## :exclamation: Consideraciones
+
+Comunicar aplicaciones de diferentes dominios generan un problema de [CORS](https://developer.mozilla.org/es/docs/Web/HTTP/CORS). Básicamente es un mecanismo que implementan los navegadores para permitir acceder a recursos de un servidor en un origen distinto (dominio) al que pertenece.
+
+![diagrama](https://user-images.githubusercontent.com/61515833/173467635-a494a4ca-f051-4cbd-9425-073bf704cb25.png)
+
+Para solucionar esto tenemos que hacer uso del paquete [CORS](https://www.npmjs.com/package/cors) para Node JS.
+
+Instalamos la dependencia necesaria: `cors`:
+
+```
+npm install cors --save
+```
+
+Ahora escribimos el código necesario en `lib/server.js` para permitir el acceso:
+
+```js
+const cors = require("cors");
+
+const corsOptions = {
+    origin: "http://localhost:8081"
+};
+
+app.use(cors(corsOptions));
+```
 ## :pushpin: Requerimientos:
 
-Explorers: 
+### Nuevo Feature Fullstack
 
-1. Habilitar un endpoint para consultar todos los explorers con todos sus campos.
-2. Habilitar un endpoint para consultar un explorer mediante un `id`.
-3. Habilitar un endpoint para crear un nuevo explorer.
-4. Habilitar un endpoint para actualizar la `mission` de un explorer.
-5. Habilitar un endpoint para eliminar un explorer.
+`missionCommander`
+| Campo | Tipo |
+|---|---|
+| id | Integer (autogenerado) |
+| name | String |
+| username | String |
+| mainStack | String |
+| currentEnrollment | Boolean |
+| hasAzureCertification | Boolean |
 
-Missions: 
+1. Crea la tabla nueva anterior. Agrega unos registros por medio de los seeds.
+2. Crea un CRUD expuesto en un API en el `server.js` (métodos GET, POST, PUT, DELETE, recuerda que el método GET deberá tener 2 endpoints, uno para traer todos los registros y otro para consultar solo el registro por ID).
+3. En la pantalla inicial del front, consulta todos los registros en esta tabla y muéstralos. Tú decides el diseño.
+4. Agrega la posibilidad de agregar uno nuevo.
+5. Agrega la posibilidad de editar el `mainStack`.
+6. Agrega la posibilidad de eliminar el registro.
 
-1. Habilitar un endpoint para consultar todas las missionss con todos sus campos.
-2. Habilitar un endpoint para consultar una mission mediante un `id`.
-3. Habilitar un endpoint para crear una nueva mission.
-4. Habilitar un endpoint para actualizar el `missionComander` de una mission.
-5. Habilitar un endpoint para eliminar una mission.
 
-## :chart: Desarrollo
-
-1. Dado los requerimientos se deben tener en cuenta como serán los endpoints y requests de la API:
-
-| Endpoint | Request | Response |
-|---|---|---|
-| `localhost:3000/explorers` | `localhost:3000/explorers` | Devuelve la lista completa de explorers |
-| `localhost:3000/explorers/:id` | `localhost:3000/explorers/2` | Explorer con `id` 2 |
-| `localhost:3000/missions` | `localhost:3000/missions` | Devuelve la lista completa de missions|
-| `localhost:3000/missions/:id` | `localhost:3000/missions:1` | Mission con `id` 1 |
-
-2. Dependencias y tecnologías.
-
-:tanabata_tree: Tecnologías usadas:
-
-- [Node JS](https://nodejs.org/es/ "Node Oficial") v13.14.0 (Entorno de ejecución para JavaScript construido con V8, motor de JavaScript de Chrome).
-- [NPM](https://www.npmjs.com/ "NPM Oficial") v6.14.4 (Gestor de dependencias para Node JS)
-- [Git](https://git-scm.com/ "Git Oficial") v2.31.1 (Sistema de control de versiones)
-- [PostgreSQL](https://www.postgresql.org/ "PostgreSQL Oficial") v14 (Sistema de base de datos relacional de objetos de código abierto)
-- [Postman](https://www.postman.com/ "Postman Oficial") (Aplicación que dispone de herramientas nativas que nos permite realizar peticiones de una manera simple para testear APIs de tipo REST propias o de terceros)
+## Dependencias y tecnologías.
 
 :mag_right: Dependencias:
 
-- [Express JS](http://expressjs.com/ "Express Oficial") ^4.18.1 (Web framework de Node JS para infraestructura de aplicaciones web y simplificar la creación de APIS).
-- [Eslint](https://eslint.org/ "Eslint Oficial") ^8.15.0 (Linter que examina código Javascript de acuerdo a ciertas normas y criterios (personalizables por el programador) para que el código Javascript siga unos estándares y estilos de calidad).
-- [Prisma](https://jestjs.io/es-ES/](https://www.prisma.io/ "Prisma Oficial") ^3.14.0 ([ORM](https://codigofacilito.com/articulos/orm-explicacion "Qué es un ORM") de próxima generación de código abierto).
+- [CORS](https://www.npmjs.com/package/cors "Cors NPM") ^4.18.1 Proporciona un middleware Connect / Express que se puede usar para habilitar CORS con varias opciones.
 
-3. Crear un proyecto de JS dentro de la carpeta `visual-thinking-api` con las opciones por defecto:
-
-```
-npm init --yes
-```
-
-4. Inicializar un repositorio dentro de la carpeta `api-prisma-db`:
-
-```
-git init
-```
-5. Instalar las dependencias necesarias: `Express JS`, `Eslinter`, `Prisma`:
-
-```
-npm install express --save
-npm install eslint --save-dev
-npm install prisma --save-dev
-```
-
-6. El siguiente grafico representa la estructura de la solucíón:
+El siguiente grafico representa la estructura de la solucíón:
 
 ```mermaid
 graph TD;
@@ -84,26 +74,9 @@ graph TD;
 ```env
 DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
 ```
-Para consultar más información sobre Prisma (migraciones, schemas, etc.) [aquí](https://www.prisma.io/docs/getting-started "Prisma Oficial").
 
 ## :shipit: Resultados
 
-Para verificar los endpoints se hace uso de [Postman](https://www.postman.com/ "Postman Oficial"). He aquí algunos ejemplos:
-
-- Endpoint: Obtener todos los explorers:
-  - Request => localhost:3000/explorers
-
-![Animation1](https://user-images.githubusercontent.com/61515833/171520930-9b2318e6-0ea9-4e65-a88c-68e6a3f52457.gif)
-
-- Endpoint: Obtener explorer mediante id:
-  - Request => localhost:3000/explorers/:id
-
-![Animation2](https://user-images.githubusercontent.com/61515833/171521392-ab5c9664-9ed0-4719-b506-0242a6ba5b77.gif)
-
-- Endpoint: Eliminar la mission con id 4
-  - Request => localhost:3000/missions/4
-
-![Animation3](https://user-images.githubusercontent.com/61515833/171522229-c140b459-4525-4cb6-8134-03935a235c23.gif)
 
 ## :open_file_folder: Estructura de carpetas
 
