@@ -49,16 +49,15 @@ app.use(cors(corsOptions));
 4. Agrega la posibilidad de agregar uno nuevo.
 5. Agrega la posibilidad de editar el `mainStack`.
 6. Agrega la posibilidad de eliminar el registro.
-7. 
-8. Dependencias y tecnologías.
 
-:tanabata_tree: Tecnologías usadas:
+
+## Dependencias y tecnologías.
 
 :mag_right: Dependencias:
 
 - [CORS](https://www.npmjs.com/package/cors "Cors NPM") ^4.18.1 Proporciona un middleware Connect / Express que se puede usar para habilitar CORS con varias opciones.
 
-6. El siguiente grafico representa la estructura de la solucíón:
+El siguiente grafico representa la estructura de la solucíón:
 
 ```mermaid
 graph TD;
