@@ -77,6 +77,29 @@ DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=pub
 
 ## :shipit: Resultados
 
+Para verificar los endpoints se hace uso de Postman. He aquí algunos ejemplos:
+
+- Endpoint: Obtener todos los missionComanders:
+  - Request => localhost:3000/missionCommanders
+
+![Animation1](https://user-images.githubusercontent.com/61515833/173965537-9908a0f6-b951-4992-b4ee-91d7ae13274c.gif)
+
+- Endpoint: Crear un nuevo missionComander:
+  - Request => localhost:3000/missionCommander (POST)
+
+![Animation2](https://user-images.githubusercontent.com/61515833/173966359-2abb6a6e-c510-48bb-ba27-75b96c7c2274.gif)
+
+- Endpoint: Actualizar el `mainStack` de un missionComander mediante el id:
+  - Request => localhost:3000/missionCommander/4 (PUT)
+
+![Animation3](https://user-images.githubusercontent.com/61515833/173968359-dfd81346-ec1e-4105-a7ae-6f4c6b920b32.gif)
+
+- Endpoint: Eliminar un missionComander mediante el id:
+  - Request => localhost:3000/missionCommander/4 (DELETE)
+
+![Animation4](https://user-images.githubusercontent.com/61515833/173969386-ddd2abd8-d881-431f-928d-0af3c0dededd.gif)
+
+Con lo realizado se cubren los requerimientos 1 y 2. Los demás requerimientos (3, 4, 5, 6) no corresponden a este proyecto y puedes consultarlos [aquí](https://github.com/herr-code/client-launchx).
 
 ## :open_file_folder: Estructura de carpetas
 
